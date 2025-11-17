@@ -1,7 +1,9 @@
-from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos
+from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos, cantidad_producto 
+from pedidos import colgar_pedido
 
 productos = []
 productos_eliminados = []
+pedidos = []
 
 numcode = 1
 
@@ -9,11 +11,13 @@ estado = True
 while estado: 
     opcion = input("""(1: Agregar producto)
 (2: Mostrar productos)
-(3: Cambiar cantidad producto)
+(3: Mostrar cantidad producto)
 (4: Eliminar producto)
-(5: Pronóstico de demanda)
-(6: Calcular el error)
-(7: Salir)
+(5: Colgar pedido)
+(6: Mostrar pedidos)
+(7: Pronóstico de demanda)
+(8: Calcular el error)
+(9: Salir)
 Elija la opción: """)
     
     if opcion == "7": 
@@ -23,10 +27,17 @@ Elija la opción: """)
     elif opcion == "2": 
         mostras_prodcutos (productos)
     elif opcion == "3": 
-        eliminar_productos (productos, productos_eliminados)
+        cantidad_producto (productos)
     elif opcion == "4": 
-        x = 0
+        eliminar_productos (productos, productos_eliminados)
     elif opcion == "5": 
-        x = 0
+        colgar_pedido(pedidos, productos)
     elif opcion == "6": 
         x = 0
+    elif opcion == "7":
+        x = 0
+    elif opcion == "8":
+        x = 0
+    elif opcion == "9":
+        x = 0
+    
