@@ -1,4 +1,4 @@
-def ingresar_productos(productos, numcode):
+def ingresar_productos(productos):
     print (f"n\ Ingresar Producto")
     numcode = len(productos) + 1
     producto = {}

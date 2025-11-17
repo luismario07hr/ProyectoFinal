@@ -1,11 +1,9 @@
 from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos, cantidad_producto 
-from pedidos import colgar_pedido
+from modulopedidos import colgar_pedido, mostrar_pedidos
 
 productos = []
 productos_eliminados = []
 pedidos = []
-
-numcode = 1
 
 estado = True
 while estado: 
@@ -20,20 +18,21 @@ while estado:
 (9: Salir)
 Elija la opción: """)
     
-    if opcion == "7": 
+    if opcion == "7":
+        print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
         estado = False
     elif opcion == "1": 
-        ingresar_productos(productos, numcode)
+        ingresar_productos(productos)
     elif opcion == "2": 
         mostras_prodcutos (productos)
     elif opcion == "3": 
         cantidad_producto (productos)
-    elif opcion == "4": 
+    elif opcion == "4":
         eliminar_productos (productos, productos_eliminados)
     elif opcion == "5": 
         colgar_pedido(pedidos, productos)
     elif opcion == "6": 
-        x = 0
+        mostrar_pedidos(pedidos)
     elif opcion == "7":
         x = 0
     elif opcion == "8":

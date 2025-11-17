@@ -23,10 +23,11 @@ def colgar_pedido(pedidos, productos):
                 pedido["Codigo"] = codigo_pedido
                 pedido["Cantidad"] = cantidad_apedir
                 pedido["Total"] = precio_final
+                print ("Pedido montado exitosamente")
     
     if codigo_pedido == None:
         print ("No hay artículos con ese código")
              
-    pedidos.append(pedido)
-    for x,y in pedido.items(): 
-        print (x, y)
+def mostrar_pedidos (pedidos): 
+    for x,y in pedidos.items(): 
+        print (f"{x}: {y}")
