@@ -18,7 +18,7 @@ while estado:
 (8: Calcular el error)
 (9: Salir)
 Elija la opción: """)
-    
+ 
     if opcion == "9":
         print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
         estado = False

@@ -36,11 +36,13 @@ def cantidad_producto (productos):
             cantidad = producto["Cantidad"]
             nombre = producto["Nombre"]
     
-    if cantidad == 0 or nombre == None: 
+    if nombre == None and cantidad == 0: 
         print ("------------------------------------------------------")
         print ("Lo siento, no hay productos con ese código")
         print ("------------------------------------------------------")
         return
+    elif cantidad == 0: 
+        print (f"No hay stock de {nombre}")
     else:
         print (f"La cantidad del producto {nombre} es {cantidad}")
         print ("------------------------------------------------------")
