@@ -4,6 +4,7 @@ from modulopedidos import colgar_pedido, mostrar_pedidos
 productos = []
 productos_eliminados = []
 pedidos = []
+numcode = 0
 
 estado = True
 while estado: 
@@ -12,17 +13,17 @@ while estado:
 (3: Mostrar cantidad producto)
 (4: Eliminar producto)
 (5: Colgar pedido)
-(6: Mostrar pedidos)
+(6: Mostrar pedidos) 
 (7: Pronóstico de demanda)
 (8: Calcular el error)
 (9: Salir)
 Elija la opción: """)
     
-    if opcion == "7":
+    if opcion == "9":
         print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
         estado = False
     elif opcion == "1": 
-        ingresar_productos(productos)
+        numcode = ingresar_productos(productos, numcode)
     elif opcion == "2": 
         mostras_prodcutos (productos)
     elif opcion == "3": 
@@ -36,7 +37,4 @@ Elija la opción: """)
     elif opcion == "7":
         x = 0
     elif opcion == "8":
-        x = 0
-    elif opcion == "9":
-        x = 0
-    
+        x = 0  

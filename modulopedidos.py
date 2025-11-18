@@ -1,6 +1,7 @@
 def colgar_pedido(pedidos, productos): 
     pedido = {}
-    producto_elegido = input("Ingrese el código del producto: ")
+    print ("------------------------------------------------------")
+    producto_elegido = input("Ingrese el código del producto: ").capitalize()
     codigo_pedido = None
     nombre_producto = None
     cantidad_final = 0
@@ -14,6 +15,7 @@ def colgar_pedido(pedidos, productos):
 
             if cantidad_apedir > producto["Cantidad"]: 
                 print ("Sorry, no hay suficiente stock para cubrir el pedido")
+                print ("------------------------------------------------------")
             else: 
                 cantidad_final = producto["Cantidad"] - cantidad_apedir
                 producto["Cantidad"] = cantidad_final
@@ -24,10 +26,22 @@ def colgar_pedido(pedidos, productos):
                 pedido["Cantidad"] = cantidad_apedir
                 pedido["Total"] = precio_final
                 print ("Pedido montado exitosamente")
+                print ("------------------------------------------------------")
+                pedidos.append(pedido)
     
     if codigo_pedido == None:
+        print ("------------------------------------------------------")
         print ("No hay artículos con ese código")
+        print ("------------------------------------------------------")
              
-def mostrar_pedidos (pedidos): 
-    for x,y in pedidos.items(): 
-        print (f"{x}: {y}")
+def mostrar_pedidos (pedidos):
+    if pedidos == []: 
+        print ("------------------------------------------------------")
+        print ("No hay pedidos registrados")
+        print ("------------------------------------------------------")
+    else:
+        for pedido in pedidos:
+            print ("-----------------------------------")
+            for x,y in pedido.items(): 
+                print (f"\t {x}: {y}")
+            print ("-----------------------------------")
