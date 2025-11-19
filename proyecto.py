@@ -59,4 +59,4 @@ Elija la opción (número): """)
     elif opcion == "10": 
         x = 0
     elif opcion == "11": 
-        agregar_producto(productos)
+        agregar_producto(productos) #Agregar producto para aumentar el stock
