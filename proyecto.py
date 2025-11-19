@@ -1,42 +1,50 @@
+from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos, cantidad_producto, mostrar_estante
+from modulopedidos import colgar_pedido, mostrar_pedidos
+
 productos = []
 productos_eliminados = []
+pedidos = []
+numcode = 0
 
-numcode = 1
+inicio = input ("""Bienvenido Usuario, gracias por usar nuestro
+programa. Este está diseñado para que llevar el inventario
+de tus productos no sea un dolor de cabeza :).  Aquí, podrás
+agregar los productos de tu tienda y montar los pedidos. 
+El programa se encargará de actualizar todo de manera automática.
+Para continuar, envía cualquier caracter: """)
 
 estado = True
-while True: 
+while estado: 
     opcion = input("""(1: Agregar producto)
 (2: Mostrar productos)
-(3: Cambiar cantidad producto)
+(3: Mostrar cantidad producto)
 (4: Eliminar producto)
-(5: Pronóstico de demanda)
-(6: Calcular el error)
-(7: Salir)
-Elija la opción: """)
-    
-    if opcion == "7": 
+(5: Colgar pedido)
+(6: Mostrar pedidos) 
+(7: Mostrar productos en el estante)
+(8: Mostrar pronóstico de la demanda del producto)
+(9: Calcular el error)
+(10: Salir)
+Elija la opción (número): """)
+ 
+    if opcion == "10":
+        print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
         estado = False
     elif opcion == "1": 
-        a = int(input("¿Cuántos productos desea agregar?: "))
-        for x in range(a):
-            producto = {}
-            producto["Nombre"] = input("Ingrese el nombre del producto: ")
-            producto["Codigo"] = "P00" + str(numcode)
-            producto["Cantidad"] = int(input("Ingrese la cantidad del producto: "))
-            producto["Precio"] = float(input("Ingrese el precio del producto: "))
-            producto["Categoria"] = input("Ingrese la categoría del producto: ")
-            producto["Lugar"] = input ("Ingrese en que estante está el artículo: ")
-            productos.append(producto)
-            numcode += 1
-            print ("----------------------------------------")
-        
+        numcode = ingresar_productos(productos, numcode)
     elif opcion == "2": 
-        print (productos)
+        mostras_prodcutos (productos)
     elif opcion == "3": 
-        x = 0 
-    elif opcion == "4": 
-        x = 0
+        cantidad_producto (productos)
+    elif opcion == "4":
+        eliminar_productos (productos, productos_eliminados)
     elif opcion == "5": 
-        x = 0
+        colgar_pedido(pedidos, productos)
     elif opcion == "6": 
+        mostrar_pedidos(pedidos)
+    elif opcion == "7":
+        mostrar_estante(productos)
+    elif opcion == "8":
+        x = 0  
+    elif opcion == "9": 
         x = 0
