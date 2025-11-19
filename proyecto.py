@@ -6,6 +6,13 @@ productos_eliminados = []
 pedidos = []
 numcode = 0
 
+inicio = input ("""Bienvenido Usuario, gracias por usar nuestro
+programa. Este está diseñado para que llevar el inventario
+de tus productos no sea un dolor de cabeza :).  Aquí, podrás
+agregar los productos de tu tienda y montar los pedidos. 
+El programa se encargará de actualizar todo de manera automática.
+Para continuar, envía cualquier caracter: """)
+
 estado = True
 while estado: 
     opcion = input("""(1: Agregar producto)
@@ -17,7 +24,7 @@ while estado:
 (7: Pronóstico de demanda)
 (8: Calcular el error)
 (9: Salir)
-Elija la opción: """)
+Elija la opción (número): """)
  
     if opcion == "9":
         print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
