@@ -25,6 +25,7 @@ def colgar_pedido(pedidos, productos):
                 pedido["Codigo"] = codigo_pedido
                 pedido["Cantidad"] = cantidad_apedir
                 pedido["Total"] = precio_final
+                print (f"El total es de {precio_final}")
                 print ("Pedido montado exitosamente")
                 print ("------------------------------------------------------")
                 pedidos.append(pedido)

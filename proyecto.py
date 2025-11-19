@@ -1,4 +1,4 @@
-from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos, cantidad_producto 
+from moduloproductos import ingresar_productos, mostras_prodcutos, eliminar_productos, cantidad_producto, mostrar_estante
 from modulopedidos import colgar_pedido, mostrar_pedidos
 
 productos = []
@@ -21,12 +21,13 @@ while estado:
 (4: Eliminar producto)
 (5: Colgar pedido)
 (6: Mostrar pedidos) 
-(7: Pronóstico de demanda)
-(8: Calcular el error)
-(9: Salir)
+(7: Mostrar productos en el estante)
+(8: Mostrar pronóstico de la demanda del producto)
+(9: Calcular el error)
+(10: Salir)
 Elija la opción (número): """)
  
-    if opcion == "9":
+    if opcion == "10":
         print ("Gracias por usar nuestro sistema!!!!!!!!!!!")
         estado = False
     elif opcion == "1": 
@@ -42,6 +43,8 @@ Elija la opción (número): """)
     elif opcion == "6": 
         mostrar_pedidos(pedidos)
     elif opcion == "7":
-        x = 0
+        mostrar_estante(productos)
     elif opcion == "8":
         x = 0  
+    elif opcion == "9": 
+        x = 0
