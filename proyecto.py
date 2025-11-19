@@ -1,3 +1,4 @@
+from modulopronosticos import ingresar_datos_mensuales, calcular_pronosticos, calcular_error_modelo
 from moduloproductos import ingresar_productos, mostrar_productos, eliminar_productos, cantidad_producto, mostrar_estante, producto_eliminado, agregar_producto
 from modulopedidos import colgar_pedido, mostrar_pedidos
 
@@ -9,6 +10,13 @@ pedidos = []
 #Contador
 numcode = 0
 
+# Diccionario para guardar datos del pronóstico (demandas, n, alpha)
+datos_pronostico = {
+    "demandas": [],
+    "n": 0,
+    "alpha": 0.0,
+    "listo_para_error": False
+}
 #Mensaje de bienvenida para el usuario
 inicio = input ("""Bienvenido Usuario, gracias por usar nuestro
 programa. Este está diseñado para que llevar el inventario
@@ -50,6 +58,22 @@ Elija la opción (número): """)
         colgar_pedido(pedidos, productos)
     elif opcion == "6": #Mostrar todos los pedidos
         mostrar_pedidos(pedidos)
+    elif opcion == "7":
+    # Sub-menú para elegir entre datos nuevos o anteriores 
+        print("1. Ingresar nuevos datos históricos")
+        print("2. Usar datos existentes para calcular")
+        sub_opcion = input("Seleccione (1-2): ")
+        
+        if sub_opcion == "1":
+            ingresar_datos_mensuales(datos_pronostico)
+            calcular_pronosticos(datos_pronostico)
+        elif sub_opcion == "2":
+            calcular_pronosticos(datos_pronostico)
+        else: 
+            print ("Opción no válida, intente de nuevo pls")
+            
+    elif opcion == "8":
+        calcular_error_modelo(datos_pronostico)
     elif opcion == "7": #Mostrar estante
         mostrar_estante(productos)
     elif opcion == "8":
@@ -60,3 +84,5 @@ Elija la opción (número): """)
         x = 0
     elif opcion == "11": 
         agregar_producto(productos) #Agregar producto para aumentar el stock
+        
+    pausa = input ("Preione enter para continuar. . . ")
