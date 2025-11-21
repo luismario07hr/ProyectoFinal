@@ -10,7 +10,7 @@ def ingresar_productos(productos, numcode): #funcion para ingresar productos
     producto["Cantidad"] = int(input("Ingrese la cantidad del producto (números enteros): "))
     producto["Precio"] = float(input("Ingrese el precio del producto (enteros o decimales): "))
     producto["Categoria"] = input("Ingrese la categoría del producto: ")
-    producto["Estante"] = input ("Ingrese en que estante está el artículo: ")
+    producto["Estante"] = input ("Ingrese en que estante está el artículo (1-10): ")
     productos.append(producto)
     print ("------------------------------------------------------")
     return numcode
@@ -68,7 +68,6 @@ def eliminar_productos (productos, productos_eliminados):
         print ("------------------------------------------------------")
         return
         
-    print (productos_eliminados)
     
 def mostrar_estante(productos):
     elegir_estante = input("Elija el estante (1-10) en el que están los artículos: ")

@@ -23,7 +23,7 @@ programa. Este está diseñado para que llevar el inventario
 de tus productos no sea un dolor de cabeza :).  Aquí, podrás
 agregar los productos de tu tienda y montar los pedidos. 
 El programa se encargará de actualizar todo de manera automática.
-Para continuar, envía cualquier caracter: """)
+Para continuar, presiona enter """)
 
 estado = True
 
@@ -58,8 +58,12 @@ Elija la opción (número): """)
         colgar_pedido(pedidos, productos)
     elif opcion == "6": #Mostrar todos los pedidos
         mostrar_pedidos(pedidos)
-    elif opcion == "7":
-    # Sub-menú para elegir entre datos nuevos o anteriores 
+    elif opcion == "7": #Mostrar estante
+        mostrar_estante(productos)
+    elif opcion == "8":
+        producto_eliminado(productos_eliminados) #Mostrar los productos que se eliminan
+    elif opcion == "9": 
+        # Sub-menú para elegir entre datos nuevos o anteriores 
         print("1. Ingresar nuevos datos históricos")
         print("2. Usar datos existentes para calcular")
         sub_opcion = input("Seleccione (1-2): ")
@@ -71,18 +75,11 @@ Elija la opción (número): """)
             calcular_pronosticos(datos_pronostico)
         else: 
             print ("Opción no válida, intente de nuevo pls")
-            
-    elif opcion == "8":
-        calcular_error_modelo(datos_pronostico)
-    elif opcion == "7": #Mostrar estante
-        mostrar_estante(productos)
-    elif opcion == "8":
-        producto_eliminado(productos_eliminados) #Mostrar los productos que se eliminan
-    elif opcion == "9": 
-        x = 0
     elif opcion == "10": 
-        x = 0
+        calcular_error_modelo(datos_pronostico)
     elif opcion == "11": 
         agregar_producto(productos) #Agregar producto para aumentar el stock
-        
-    pausa = input ("Preione enter para continuar. . . ")
+    else: 
+        print ("Opción no valida")
+    
+    pausa = input ("Presione enter para continuar. . . ")
